@@ -1,4 +1,4 @@
-# workstation_setup
+# Workstation Setup
 Setup and Configuration files
 1. BASH: .bashrc
 2. FISH: config.fish
