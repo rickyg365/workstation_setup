@@ -1,0 +1,182 @@
+{
+    // Place your snippets for python here.
+    "File Starter": {
+        "prefix": "pystart",
+        "body": [
+            "import os",
+            "",
+            "def main():",
+            "\treturn",
+            "",
+            "if __name__ == \"__main__\":",
+            "\tmain()"
+        ],
+        "description": "Python File Starter"
+    },
+    "function": {
+        "prefix": "def",
+        "body": [
+            "def ${1:func_name}(${2:func_params}):",
+            "\t${3:func_body}",
+            "\treturn ${4:func_output}",
+            "",
+            "${1:func_name}(${5:func_inputs})"
+        ],
+        "description": "Create Function"
+    },
+    "class": {
+        "prefix": "new ",
+        "body": [
+            "class ${1:class_name}:",
+            "\tdef __init__(self, ${2:params}):",
+            "\t\tself.${3:attr}= ${3:attr}",
+            "",
+            "\tdef __str__(self):",
+            "\t\ttxt = f\"{${4:value}}\"",
+            "\t\treturn txt",
+            "",
+            "\tdef ${5:method}(self):",
+            "\t\t${6:do_stuff}",
+            "\t\tpass",
+            "",
+            "${1:class_name}(${7:test_value})",
+            ""
+        ],
+        "description": "create a class"
+    },
+    // Loops/Lists
+    "list": {
+        "prefix": "new list",
+        "body": ["${1:list_name} = [", "    ${2:value},", "]"],
+        "description": "list"
+    },
+    "for loop": {
+        "prefix": "floop",
+        "body": [
+            "for ${1:var_name} in ${2:iterator_name}:",
+            "\t${3:functionality}"
+        ],
+        "description": "for loop"
+    },
+    "double for loop": {
+        "prefix": "dfloop",
+        "body": [
+            "for ${1:var1} in ${2:iterator1}:",
+            "    for ${3:var2} in ${4:iterator2}:",
+            "        ${5:functionality}"
+        ],
+        "description": "double for loop"
+    },
+    // Dict
+    "dict": {
+        "prefix": "new dict",
+        "body": ["${1:dict_name} = {", "    ${2:key}: ${3:value},", "}"],
+        "description": "dict"
+    },
+    "iterate through dict items(keys and values)": {
+        "prefix": "diter",
+        "body": [
+            "for ${1:key}, ${2:value} in ${3:dict_name}.items():",
+            "    ${4:functionality}"
+        ],
+        "description": "iterate through dict"
+    },
+    "iterate through dict keys": {
+        "prefix": "dkiter",
+        "body": ["for ${1:keys} in ${2:dict_name}:", "    ${3:functionality}"],
+        "description": "iterate through dict keys"
+    },
+    "iterate through dict values": {
+        "prefix": "dviter",
+        "body": [
+            "for ${1:values} in ${2:dict_name}.values():",
+            "    ${3:functionality}"
+        ],
+        "description": "iterate through dict values"
+    },
+    // Discord.py Snippets
+    "Cog Base File Template": {
+        "prefix": "cog_base",
+        "body": [
+            "import os",
+            "import discord",
+            "",
+            "from discord.ext import commands",
+            "",
+            "# Setup Bot",
+            "bot = commands.Bot(command_prefix=\"!\")",
+            "cogs = [\"cog.greeter\"]  #place cogs here",
+            "",
+            "# On Ready event",
+            "@bot.event",
+            "async def on_ready():",
+            "    print(f'We have logged in as {bot.user}')",
+            "    for cog in cogs:",
+            "        try:",
+            "            bot.load_extension(cog)",
+            "            print(cog + \" was loaded.\")",
+            "        except Exception as e:",
+            "            print(e)",
+            "",
+            "# On Message event",
+            "@bot.event",
+            "async def on_message(message):",
+            "    # Ignore bot messages",
+            "    if message.author == bot.user:",
+            "        return",
+            "",
+            "# Command Example",
+            "@bot.command()",
+            "async def ping(ctx):",
+            "    print(\"pong [main]\")",
+            "    await ctx.send(\"Pong\")",
+            "",
+            "# Run Bot",
+            "try:",
+            "    bot.run(os.getenv(\"TOKEN\"))",
+            "except discord.HTTPException as e:",
+            "    if e.status == 429:",
+            "        print(",
+            "            \"The Discord servers denied the connection for making too many requests\"",
+            "        )",
+            "        print(",
+            "            \"Get help from https://stackoverflow.com/questions/66724687/in-discord-py-how-to-solve-the-error-for-toomanyrequests\"",
+            "        )",
+            "    else:",
+            "        raise e",
+            ""
+        ],
+        "description": "Cog Base File Template"
+    },
+    "Cog Template": {
+        "prefix": "cog",
+        "body": [
+            "# Must add new cogs to list of cogs in main.py",
+            "import discord",
+            "from discord.ext import commands",
+            "from discord.utils import get",
+            "",
+            "",
+            "class ${1:class_name}(commands.Cog):",
+            "    def __init__(self, bot):",
+            "        self.data = []",
+            "        self.bot = bot",
+            "",
+            "    @commands.Cog.listener()",
+            "    async def on_message(self, ctx):",
+            "        if ctx.author == self.bot.user:",
+            "            return",
+            "        # Send msg",
+            "        # await ctx.channel.send(\"msg\")",
+            "        print(\"msg: \", ctx.content)",
+            "",
+            "        # To prevent overiding on_message in main",
+            "        await self.bot.process_commands(ctx)",
+            "",
+            "def setup(bot):",
+            "    bot.add_cog(${1:class_name}(bot))",
+            ""
+        ],
+        "description": "Cog Template"
+    }
+}
