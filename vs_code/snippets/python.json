@@ -1,5 +1,4 @@
 {
-    // Place your snippets for python here.
     "File Starter": {
         "prefix": "pystart",
         "body": [
@@ -44,7 +43,6 @@
         ],
         "description": "create a class"
     },
-    // Loops/Lists
     "list": {
         "prefix": "new list",
         "body": ["${1:list_name} = [", "    ${2:value},", "]"],
@@ -67,7 +65,6 @@
         ],
         "description": "double for loop"
     },
-    // Dict
     "dict": {
         "prefix": "new dict",
         "body": ["${1:dict_name} = {", "    ${2:key}: ${3:value},", "}"],
@@ -94,7 +91,6 @@
         ],
         "description": "iterate through dict values"
     },
-    // Discord.py Snippets
     "Cog Base File Template": {
         "prefix": "cog_base",
         "body": [

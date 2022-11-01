@@ -1,0 +1,13 @@
+{
+    "Start a Component": {
+        "prefix": "ccpls",
+        "body": [
+            "import \"./$1.css\";",
+            "\nlet $1 = ($2) => {$3",
+            "    return <div className=\"$1-container\"></div>;",
+            "}\n",
+            "export default $1;"
+        ],
+        "description": "Start a React Component"
+    }
+}

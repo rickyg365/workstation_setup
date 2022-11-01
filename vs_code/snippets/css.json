@@ -1,0 +1,16 @@
+{
+    "CSS Reset": {
+        "prefix": ":reset",
+        "body": [
+            ":root {",
+            "}",
+            "",
+            "* {",
+            "\tmargin: 0;",
+            "\tpadding: 0;",
+            "    box-sizing: border-box;",
+            "}"
+        ],
+        "description": "Start css from a clean slate"
+    }
+}

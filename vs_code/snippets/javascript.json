@@ -1,0 +1,11 @@
+{
+    "fetching": {
+        "prefix": "fetching",
+        "body": [
+            "const fetchData = (url) => {",
+            "\tfetch(url).then( res => res.json());",
+            "};"
+        ],
+        "description": "Fetch data from an api!"
+    }
+}

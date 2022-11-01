@@ -1,0 +1,22 @@
+{
+    "Start a Component": {
+        "prefix": "ccpls",
+        "body": [
+            "import \"../styles/$1.css\";",
+            "\nlet $1 = ($2) => {$3",
+            "    return <div className=\"$1-container\"></div>;",
+            "}\n",
+            "export default $1;"
+        ],
+        "description": "Start a React Component"
+    },
+    "Double For Loop": {
+        "prefix": "dblfor",
+        "body": [
+            "for (let i = 0; i < width; i++) {",
+            "    for (let j = 0; j < height; j++) {$1}",
+            "}\n"
+        ],
+        "description": "Create a double for loop"
+    }
+}
